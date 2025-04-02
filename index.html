@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Página Principal</title>
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <div class="head">
+        <div class="LOGO">
+            <a href="index.html">LOGO</a>
+        </div>
+
+        <!-- Menú de navegación -->
+        <nav class="navbar" id="navbar">
+            <a href="index.html" target="INICI">INICI</a>
+            <a href="MEMBRES.html" target="MEMBRES">MEMBRES</a>
+            <a href="PROJECTE.html" target="PROJECTE">PROJECTE</a>
+            <a href="MAPA.html" target="MAPA">MAPA</a>
+            <a href="CONTACTE.html" target="CONTACTE">CONTACTE</a>
+        </nav>
+
+        <!-- Ícono de menú para móviles -->
+        <div class="menu-icon" id="menuIcon">☰</div>
+    </div>
+
+    <!-- Contenido principal -->
+    <header class="content header">
+        <h2 class="title">TARRACOGOL</h2>
+        <p>Benvingut/da a la pàgina principal del projecte TARRACOGOL.</p>
+    </header>
+
+    <!-- Botón de "volver arriba" -->
+    <button id="scrollTopBtn" class="scroll-top-btn">↑</button>
+
+    <!-- JavaScript -->
+    <script>
+        // Mostrar/ocultar menú en móviles
+        const menuIcon = document.getElementById('menuIcon');
+        const navbar = document.getElementById('navbar');
+
+        menuIcon.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+
+        // Mostrar/ocultar botón de "volver arriba"
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        // Volver al inicio al hacer clic en el botón
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Desplazamiento suave
+            });
+        });
+    </script>
+</body>
+</html>
