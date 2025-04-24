@@ -4,31 +4,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title>MAPA</title>
+    <style>
+        /* Estilos adicionales para personalizar */
+        .navbar a:hover {
+            background-color: #f5f5f5;
+        }
+        .content {
+            padding-top: 80px;
+            padding-bottom: 40px;
+        }
+        .map-container {
+            height: 500px;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
 </head>
 <body>
 
-    <div class="head">
-        <div class="LOGO">
-            <a href="#">LOGO</a>
+    <!-- Barra de navegación -->
+    <div class="w3-bar w3-white w3-card w3-padding">
+        <div class="w3-bar-item w3-large">
+            <a href="#" class="w3-text-black" style="text-decoration: none;">LOGO</a>
         </div>
-
-        <nav class="navbar">
-            <a href="index.html" target="INICI">INICI</a>
-            <a href="MEMBRES.html" target="MEMBRES">MEMBRES</a>
-            <a href="PROJECTE.html" target="PROJECTE">PROJECTE</a>
-            <a href="MAPA.html" target="MAPA">MAPA</a>
-            <a href="CONTACTE.html" target="CONTACTE">CONTACTE</a>
-        </nav>
+        
+        <div class="w3-right w3-hide-small">
+            <a href="index.html" class="w3-bar-item w3-button w3-text-black">INICI</a>
+            <a href="MEMBRES.html" class="w3-bar-item w3-button w3-text-black">MEMBRES</a>
+            <a href="PROJECTE.html" class="w3-bar-item w3-button w3-text-black">PROJECTE</a>
+            <a href="MAPA.html" class="w3-bar-item w3-button w3-text-black w3-light-grey">MAPA</a>
+            <a href="CONTACTE.html" class="w3-bar-item w3-button w3-text-black">CONTACTE</a>
+        </div>
+        
+        <!-- Menú para móviles -->
+        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="toggleMenu()">☰</a>
     </div>
 
-    <section class="content">
-        <h2 class="title">MAPA</h2>
+    <!-- Menú móvil (oculto por defecto) -->
+    <div id="mobileMenu" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+        <a href="index.html" class="w3-bar-item w3-button w3-text-black">INICI</a>
+        <a href="MEMBRES.html" class="w3-bar-item w3-button w3-text-black">MEMBRES</a>
+        <a href="PROJECTE.html" class="w3-bar-item w3-button w3-text-black">PROJECTE</a>
+        <a href="MAPA.html" class="w3-bar-item w3-button w3-text-black w3-light-grey">MAPA</a>
+        <a href="CONTACTE.html" class="w3-bar-item w3-button w3-text-black">CONTACTE</a>
+    </div>
 
-        <div id="map" style="height: 500px; width: 100%; border-radius: 10px; margin-bottom: 30px;"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14072.968311007602!2d1.2461325493440905!3d41.124655279108076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a3fcba3c3f82ed%3A0xcc3191ce4c63ec09!2sNou%20Estadi%20Costa%20Daurada!5e0!3m2!1ses!2ses!4v1741195951254!5m2!1ses!2ses" width="1425" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    <section class="content w3-container">
+        <h2 class="w3-center w3-xxlarge w3-padding-16">MAPA</h2>
+
+        <div class="map-container w3-card">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14072.968311007602!2d1.2461325493440905!3d41.124655279108076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a3fcba3c3f82ed%3A0xcc3191ce4c63ec09!2sNou%20Estadi%20Costa%20Daurada!5e0!3m2!1ses!2ses!4v1741195951254!5m2!1ses!2ses" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
 
     </section>
 
+    <script>
+        function toggleMenu() {
+            var x = document.getElementById("mobileMenu");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else { 
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+    </script>
 </body>
 </html>
