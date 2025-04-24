@@ -2,51 +2,117 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
     <title>Página Principal</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        /* Estilos personalizados */
+        .scroll-top-btn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: #555;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 18px;
+        }
+        .scroll-top-btn.visible {
+            display: block;
+        }
+        .w3-bar-item.logo {
+            font-weight: bold;
+        }
+        
+        /* Estilos para el fondo con imagen */
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('tu-imagen-de-fondo.jpg');
+            height: 100vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        .hero-text {
+            padding: 20px;
+        }
+        .navbar {
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        .content {
+            padding-top: 60px;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Barra de navegación -->
-    <div class="head">
-        <div class="LOGO">
-            <a href="index.html">LOGO</a>
+    <!-- Barra de navegación fija -->
+    <div class="navbar w3-bar w3-card">
+        <a href="index.html" class="w3-bar-item w3-button logo">LOGO</a>
+        
+        <!-- Menú para pantallas grandes -->
+        <div class="w3-right w3-hide-small">
+            <a href="index.html" class="w3-bar-item w3-button w3-grey">INICI</a>
+            <a href="MEMBRES.html" class="w3-bar-item w3-button">MEMBRES</a>
+            <a href="PROJECTE.html" class="w3-bar-item w3-button">PROJECTE</a>
+            <a href="MAPA.html" class="w3-bar-item w3-button">MAPA</a>
+            <a href="CONTACTE.html" class="w3-bar-item w3-button">CONTACTE</a>
         </div>
-
-        <!-- Menú de navegación -->
-        <nav class="navbar" id="navbar">
-            <a href="index.html" target="INICI">INICI</a>
-            <a href="MEMBRES.html" target="MEMBRES">MEMBRES</a>
-            <a href="PROJECTE.html" target="PROJECTE">PROJECTE</a>
-            <a href="MAPA.html" target="MAPA">MAPA</a>
-            <a href="CONTACTE.html" target="CONTACTE">CONTACTE</a>
-        </nav>
-
-        <!-- Ícono de menú para móviles -->
-        <div class="menu-icon" id="menuIcon">☰</div>
+        
+        <!-- Botón de menú para móviles -->
+        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="toggleMenu()">☰</a>
     </div>
 
-    <!-- Contenido principal -->
-    <header class="content header">
-        <h2 class="title">TARRACOGOL</h2>
-        <p>Benvingut/da a la pàgina principal del projecte TARRACOGOL.</p>
-    </header>
+    <!-- Menú para móviles (oculto por defecto) -->
+    <div id="mobileMenu" class="w3-bar-block w3-light-grey w3-hide w3-hide-large w3-hide-medium" style="margin-top:46px">
+        <a href="index.html" class="w3-bar-item w3-button w3-grey">INICI</a>
+        <a href="MEMBRES.html" class="w3-bar-item w3-button">MEMBRES</a>
+        <a href="PROJECTE.html" class="w3-bar-item w3-button">PROJECTE</a>
+        <a href="MAPA.html" class="w3-bar-item w3-button">MAPA</a>
+        <a href="CONTACTE.html" class="w3-bar-item w3-button">CONTACTE</a>
+    </div>
+
+    <!-- Sección hero con imagen de fondo -->
+    <div class="hero-image">
+        <div class="hero-text">
+            <h1 class="w3-xxlarge w3-text-white" style="text-shadow: 2px 2px 4px #000000;">TARRACOGOL</h1>
+            <p class="w3-large w3-text-white" style="text-shadow: 1px 1px 2px #000000;">Benvingut/da a la pàgina principal del projecte TARRACOGOL.</p>
+            <a href="#content" class="w3-button w3-white w3-padding-large w3-large w3-margin-top">Saber més</a>
+        </div>
+    </div>
+
+    <!-- Contenido adicional (opcional) -->
+    <div id="content" class="w3-container w3-content w3-padding-64" style="max-width:800px">
+        <h2 class="w3-center">Sobre el projecte</h2>
+        <p class="w3-center">Aquí puedes añadir más contenido sobre tu proyecto.</p>
+    </div>
 
     <!-- Botón de "volver arriba" -->
-    <button id="scrollTopBtn" class="scroll-top-btn">↑</button>
+    <button id="scrollTopBtn" class="scroll-top-btn w3-hover-dark-grey">↑</button>
 
     <!-- JavaScript -->
     <script>
-        // Mostrar/ocultar menú en móviles
-        const menuIcon = document.getElementById('menuIcon');
-        const navbar = document.getElementById('navbar');
-
-        menuIcon.addEventListener('click', () => {
-            navbar.classList.toggle('active');
-        });
+        // Función para mostrar/ocultar el menú móvil
+        function toggleMenu() {
+            var x = document.getElementById("mobileMenu");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else { 
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
 
         // Mostrar/ocultar botón de "volver arriba"
         const scrollTopBtn = document.getElementById('scrollTopBtn');
@@ -63,7 +129,7 @@
         scrollTopBtn.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,
-                behavior: 'smooth' // Desplazamiento suave
+                behavior: 'smooth'
             });
         });
     </script>
