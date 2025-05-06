@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,16 +12,19 @@
         .navbar a:hover {
             background-color: #f5f5f5;
         }
+
         .content {
             padding-top: 80px;
             padding-bottom: 40px;
         }
+
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
             padding: 20px;
         }
+
         .card {
             position: relative;
             width: 100%;
@@ -28,7 +32,9 @@
             perspective: 1000px;
             cursor: pointer;
         }
-        .front, .back {
+
+        .front,
+        .back {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -40,20 +46,25 @@
             display: flex;
             flex-direction: column;
         }
+
         .front {
             background-color: #f5f5f5;
             transform: rotateY(0deg);
         }
+
         .back {
             background-color: #e0e0e0;
             transform: rotateY(180deg);
         }
+
         .girado .front {
             transform: rotateY(180deg);
         }
+
         .girado .back {
             transform: rotateY(360deg);
         }
+
         .card img {
             width: 100%;
             height: 200px;
@@ -61,36 +72,58 @@
             border-radius: 5px;
             margin: 10px 0;
         }
+
         .card h3 {
             margin: 0;
             font-size: 1.2em;
         }
+
         .card p {
             margin: 5px 0;
         }
 
         /* Logo como capa de fondo transparente */
         body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('Img/Logo.jpg') center center no-repeat;
-      background-size: 700px;
-      opacity: 0.20; /* Ajusta la transparencia aquí */
-      z-index: 0;
-      pointer-events: none;
-    }
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('Img/Logo.jpg') center center no-repeat;
+            background-size: 700px;
+            opacity: 0.20;
+            /* Ajusta la transparencia aquí */
+            z-index: 0;
+            pointer-events: none;
+        }
 
-    /* Asegurar que el contenido esté encima del fondo */
-    body > * {
-      position: relative;
-      z-index: 1;
-    }
+        /* Asegurar que el contenido esté encima del fondo */
+        body>* {
+            position: relative;
+            z-index: 1;
+        }
+        .scroll-top-btn {
+            display: none;
+            position: fixed;
+            bottom: 40px;
+            right: 20px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: #888888;
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 18px;
+        }
+        .scroll-top-btn.visible {
+            display: block;
+        }
     </style>
 </head>
+
 <body>
 
     <!-- Barra de navegación -->
@@ -98,10 +131,10 @@
         <div class="w3-bar-item w3-large">
             <a href="index.html" class="w3-bar-item w3-button logo">
                 <img src="Img/Logo.jpg" alt="Logo de la web" style="height:30px;">
-                <a href="#" class="w3-bar-item w3-button logo">TARRACOGOL</a>  
+                <a href="#" class="w3-bar-item w3-button logo">TARRACOGOL</a>
             </a>
         </div>
-        
+
         <div class="w3-right w3-hide-small">
             <a href="index.html" class="w3-bar-item w3-button w3-text-black">INICI</a>
             <a href="MEMBRES.html" class="w3-bar-item w3-button w3-text-black">MEMBRES</a>
@@ -109,9 +142,10 @@
             <a href="MAPA.html" class="w3-bar-item w3-button w3-text-black">MAPA</a>
             <a href="CONTACTE.html" class="w3-bar-item w3-button w3-text-black">CONTACTE</a>
         </div>
-        
+
         <!-- Menú para móviles -->
-        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="toggleMenu()">☰</a>
+        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
+            onclick="toggleMenu()">☰</a>
     </div>
 
     <!-- Menú móvil (oculto por defecto) -->
@@ -126,15 +160,16 @@
     <section class="content w3-container">
         <h2 class="w3-center w3-xxlarge w3-padding-16">PROJECTE</h2>
         <p class="w3-center">Loerem</p>
-        
+
         <div class="grid-container">
             <!-- Tarjeta 1 -->
             <div class="w3-card" onclick="girar(this)">
                 <div class="card">
                     <div class="front">
                         <h3>Nou Estadi de Tarragona</h3>
-                        <img src="https://www.tarragona.cat/esports/fitxers/imatges/installacions-esportives/camps-de-futbol/vista-terreny-de-joc-nastic.jpg" alt="Camp de futbol del Gimnàstic">
-                        <p>Clica per obtenir informació</p>                   
+                        <img src="https://www.tarragona.cat/esports/fitxers/imatges/installacions-esportives/camps-de-futbol/vista-terreny-de-joc-nastic.jpg"
+                            alt="Camp de futbol del Gimnàstic">
+                        <p>Clica per obtenir informació</p>
                     </div>
                     <div class="back">
                         <h3>Gimnàstic de Tarragona</h3>
@@ -144,13 +179,14 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Tarjeta 2 -->
             <div class="w3-card" onclick="girar(this)">
                 <div class="card">
                     <div class="front">
                         <h3>Sant Salvador</h3>
-                        <img src="https://www.tarragona.cat/esports/fitxers/imatges/installacions-esportives/camps-de-futbol/camp-futbol-sant-salvador-2.jpg" alt="Sant Salvador">
+                        <img src="https://www.tarragona.cat/esports/fitxers/imatges/installacions-esportives/camps-de-futbol/camp-futbol-sant-salvador-2.jpg"
+                            alt="Sant Salvador">
                         <p>Clica per obtenir informació</p>
                     </div>
                     <div class="back">
@@ -161,13 +197,14 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Tarjeta 3 -->
             <div class="w3-card" onclick="girar(this)">
                 <div class="card">
                     <div class="front">
                         <h3>Bonavista</h3>
-                        <img src="https://www.tarragona.cat/esports/fitxers/imatges/installacions-esportives/camps-de-futbol/camp-de-futbol-bonavista-1.jpg" alt="Bonavista">
+                        <img src="https://www.tarragona.cat/esports/fitxers/imatges/installacions-esportives/camps-de-futbol/camp-de-futbol-bonavista-1.jpg"
+                            alt="Bonavista">
                         <p>Clica per obtenir informació</p>
                     </div>
                     <div class="back">
@@ -178,13 +215,14 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Tarjeta 4 -->
             <div class="w3-card" onclick="girar(this)">
                 <div class="card">
                     <div class="front">
                         <h3>Torreforta</h3>
-                        <img src="https://www.tarragona.cat/esports/fitxers/imatges/installacions-esportives/camps-de-futbol/camp-de-futbol-torreforta-2.jpg" alt="Torreforta">
+                        <img src="https://www.tarragona.cat/esports/fitxers/imatges/installacions-esportives/camps-de-futbol/camp-de-futbol-torreforta-2.jpg"
+                            alt="Torreforta">
                         <p>Clica per obtenir informació</p>
                     </div>
                     <div class="back">
@@ -195,13 +233,14 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Tarjeta 5 -->
             <div class="w3-card" onclick="girar(this)">
                 <div class="card">
                     <div class="front">
                         <h3>Icomar</h3>
-                        <img src="https://www.tarragona.cat/esports/fitxers/imatges/installacions-esportives/camps-de-futbol/camp-futbol-icomar-2.jpg" alt="Icomar">
+                        <img src="https://www.tarragona.cat/esports/fitxers/imatges/installacions-esportives/camps-de-futbol/camp-futbol-icomar-2.jpg"
+                            alt="Icomar">
                         <p>Clica per obtenir informació</p>
                     </div>
                     <div class="back">
@@ -212,13 +251,14 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Tarjeta 6 -->
             <div class="w3-card" onclick="girar(this)">
                 <div class="card">
                     <div class="front">
                         <h3>Sant Pere i Sant Pau</h3>
-                        <img src="https://www.tarragona.cat/esports/fitxers/imatges/installacions-esportives/camps-de-futbol/camp-futbol-sant-pere-sant-pau.jpg" alt="Sant Pere i Sant Pau">
+                        <img src="https://www.tarragona.cat/esports/fitxers/imatges/installacions-esportives/camps-de-futbol/camp-futbol-sant-pere-sant-pau.jpg"
+                            alt="Sant Pere i Sant Pau">
                         <p>Clica per obtenir informació</p>
                     </div>
                     <div class="back">
@@ -229,13 +269,14 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Tarjeta 7 -->
             <div class="w3-card" onclick="girar(this)">
                 <div class="card">
                     <div class="front">
                         <h3>Campclar</h3>
-                        <img src="https://www.tarragona.cat/esports/fitxers/imatges/installacions-esportives/camps-de-futbol/camp-futbol-campclar-1.jpg" alt="Campclar">
+                        <img src="https://www.tarragona.cat/esports/fitxers/imatges/installacions-esportives/camps-de-futbol/camp-futbol-campclar-1.jpg"
+                            alt="Campclar">
                         <p>Clica per obtenir informació</p>
                     </div>
                     <div class="back">
@@ -246,13 +287,14 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Tarjeta 8 -->
             <div class="w3-card" onclick="girar(this)">
                 <div class="card">
                     <div class="front">
                         <h3>La Granja</h3>
-                        <img src="https://www.tarragona.cat/esports/fitxers/imatges/installacions-esportives/camps-de-futbol/camp-futbol-la-granja-2.jpg" alt="La Granja">
+                        <img src="https://www.tarragona.cat/esports/fitxers/imatges/installacions-esportives/camps-de-futbol/camp-futbol-la-granja-2.jpg"
+                            alt="La Granja">
                         <p>Clica per obtenir informació</p>
                     </div>
                     <div class="back">
@@ -263,13 +305,14 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Tarjeta 9 -->
             <div class="w3-card" onclick="girar(this)">
                 <div class="card">
                     <div class="front">
                         <h3>La Floresta</h3>
-                        <img src="https://www.tarragona.cat/esports/fitxers/imatges/installacions-esportives/camps-de-futbol/camp-futbol-la-floresta.jpg" alt="La Floresta">
+                        <img src="https://www.tarragona.cat/esports/fitxers/imatges/installacions-esportives/camps-de-futbol/camp-futbol-la-floresta.jpg"
+                            alt="La Floresta">
                         <p>Clica per obtenir informació</p>
                     </div>
                     <div class="back">
@@ -282,21 +325,42 @@
             </div>
         </div>
     </section>
+    <!-- Botó "tornar a dalt" -->
+    <button id="scrollTopBtn" class="w3-button w3-dark-grey w3-round-xlarge">↑</button>
 
     <script>
         function girar(elemento) {
             elemento.classList.toggle('girado');
         }
-        
+
         function toggleMenu() {
             var x = document.getElementById("mobileMenu");
             if (x.className.indexOf("w3-show") == -1) {
                 x.className += " w3-show";
-            } else { 
+            } else {
                 x.className = x.className.replace(" w3-show", "");
             }
         }
+
+        // Mostrar/ocultar botó "tornar a dalt"
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+        window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollTopBtn.style.display = 'block';
+      } else {
+        scrollTopBtn.style.display = 'none';
+      }
+     });
+
+     scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
     </script>
+
 </body>
 
 <footer class="w3-container w3-dark-grey w3-center w3-padding-32">
