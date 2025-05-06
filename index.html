@@ -10,13 +10,13 @@
         .scroll-top-btn {
             display: none;
             position: fixed;
-            bottom: 20px;
+            bottom: 40px;
             right: 20px;
             z-index: 99;
             border: none;
             outline: none;
-            background-color: #555;
-            color: white;
+            background-color: #888888;
+            color: rgb(255, 255, 255);
             cursor: pointer;
             padding: 15px;
             border-radius: 50%;
@@ -54,10 +54,46 @@
         .content {
             padding-top: 60px;
         }
+        
+        /* Nuevos estilos para la sección dividida */
+        .about-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+            text-align: center;
+        }
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .about-section {
+                flex-direction: column;
+            }
+            .about-text, .about-image {
+                width: 100%;
+                padding: 10px;
+            }
+        }
     </style>
 </head>
 <body>
 
+    <!-- Tu navegación y hero section se mantienen igual -->
     <div class="w3-bar w3-white w3-card w3-large">
         <a href="index.html" class="w3-bar-item w3-button logo">
           <img src="Img/Logo.jpg" alt="Logo de la web" style="height:30px;">
@@ -89,16 +125,32 @@
     <!-- Sección hero con imagen de fondo -->
     <div class="hero-image">
         <div class="hero-text">
-            <h1 class="w3-xxlarge w3-text-white" style="text-shadow: 2px 2px 4px #000000;">TARRACOGOL</h1>
-            <p class="w3-large w3-text-white" style="text-shadow: 1px 1px 2px #000000;">Benvingut/da al projecte TARRACOGOL.</p>
+            <h1 class="w3-xxlarge w3-text-white" style="text-shadow: 2px 2px 4px #000000;">Benvingut/da al projecte TARRACOGOL.</h1>
+            <img src="img/Logo.jpg" alt="Imatge del projecte TARRACOGOL" style="display:block; margin:20px auto; max-width:350px;">
             <a href="#content" class="w3-button w3-white w3-padding-large w3-large w3-margin-top">Saber més</a>
         </div>
     </div>
 
-    <!-- Contenido adicional (opcional) -->
-    <div id="content" class="w3-container w3-content w3-padding-64" style="max-width:800px">
+    <!-- Contenido adicional modificado -->
+    <div id="content" class="w3-container w3-content w3-padding-64" style="max-width:1200px">
         <h2 class="w3-center">Sobre el projecte</h2>
-        <p class="w3-center">Aquí puedes añadir más contenido sobre tu proyecto.</p>
+        
+        <div class="about-section">
+            <div class="about-text">
+                <h3>El nostre objectiu</h3>
+                <p>El projecte TARRACOGOL neix amb la finalitat de promoure i estudiar el medi ambient a la regió de Tarragona. El nostre equip multidisciplinari treballa per entendre millor els ecosistemes locals i desenvolupar solucions sostenibles.</p>
+                
+                <h3>Què fem?</h3>
+                <p>Realitzem investigacions de camp, col·laborem amb institucions acadèmiques i organitzem activitats de conscienciació ambiental. El nostre enfocament combina mètodes científics amb la participació comunitària.</p>
+                
+                <h3>Per què és important?</h3>
+                <p>La preservació dels nostres entorns naturals és crucial per a les generacions futures. A través d'aquest projecte, busquem crear un impacte positiu en la nostra comunitat i en el medi ambient.</p>
+            </div>
+            
+            <div class="about-image">
+                <img src="Img/Logo.jpg" alt="Imatge del projecte TARRACOGOL">
+            </div>
+        </div>
     </div>
 
     <!-- Botón de "volver arriba" -->
@@ -120,7 +172,7 @@
         const scrollTopBtn = document.getElementById('scrollTopBtn');
 
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
+            if (window.scrollY > 150) {
                 scrollTopBtn.classList.add('visible');
             } else {
                 scrollTopBtn.classList.remove('visible');
