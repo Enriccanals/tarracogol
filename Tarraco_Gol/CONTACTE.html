@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>CONTACTE</title>
+</head>
+<body>
+
+    <div class="head">
+        <div class="LOGO">
+            <a href="#">LOGO</a>
+        </div>
+
+        <nav class="navbar">
+            <a href="index.html" target="INICI">INICI</a>
+            <a href="MEMBRES.html" target="MEMBRES">MEMBRES</a>
+            <a href="PROJECTE.html" target="PROJECTE">PROJECTE</a>
+            <a href="MAPA.html" target="MAPA">MAPA</a>
+            <a href="CONTACTE.html" target="CONTACTE">CONTACTE</a>
+        </nav>
+    </div>
+
+    <section id="contacte" class="contact-section">
+        <div class="container mx-auto py-12">
+          <h2 class="text-3xl font-bold text-center mb-6">CONTACTE</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Información de Contacto -->
+            <div class="contact-info p-6 bg-gray-100 rounded-2xl shadow-md">
+              <h3 class="text-xl font-semibold mb-4">Informació de contacte</h3>
+              <p><strong>Email:</strong> contacte@tarracogol.com</p>
+              <p><strong>Telèfon:</strong> +34 977 456 789</p>
+              <p><strong>Adreça:</strong> Tarragona, Catalunya</p>
+              <p class="mt-4">Segueix-nos a les nostres xarxes socials:</p>
+              <div class="flex space-x-4 mt-2">
+                <a href="#" class="text-blue-500 hover:text-blue-700">Instagram</a>
+                <a href="#" class="text-blue-500 hover:text-blue-700">Twitter</a>
+                <a href="#" class="text-blue-500 hover:text-blue-700">Facebook</a>
+              </div>
+            </div>
+      
+            <!-- Formulari de Contacte -->
+            <div class="contact-form p-6 bg-gray-100 rounded-2xl shadow-md">
+              <h3 class="text-xl font-semibold mb-4">Envia'ns el teu missatge</h3>
+              <form action="" method="POST" class="space-y-4">
+                <input type="text" name="name" placeholder="Nom" class="w-full p-3 rounded-lg border border-gray-300" required>
+                <input type="email" name="email" placeholder="Correu electrònic" class="w-full p-3 rounded-lg border border-gray-300" required>
+                <textarea name="message" placeholder="Missatge" rows="5" class="w-full p-3 rounded-lg border border-gray-300" required></textarea>
+                <button type="submit" class="bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700">Enviar</button>
+              </form>
+            </div>
+          </div>
+      
+          <!-- Chat en viu -->
+          <div class="chat-box mt-12 p-6 bg-gray-100 rounded-2xl shadow-md text-center">
+            <h3 class="text-xl font-semibold mb-4">Xat en viu</h3>
+            <p>Fes clic al botó per començar a xatejar amb nosaltres!</p>
+            <button onclick="startChat()" class="bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 mt-4">Obrir Xat</button>
+          </div>
+        </div>
+      
+        <script>
+          function startChat() {
+            alert("El servei de xat estarà disponible pròximament!");
+          }
+        </script>
+      </section>
